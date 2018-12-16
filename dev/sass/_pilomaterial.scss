@@ -1,0 +1,90 @@
+.pilomaterial {
+	position: relative;
+	padding: 150px 0 120px;
+	background-color: $black_fon;
+	overflow: hidden;
+
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: -245px;
+		left: -10%;
+		z-index: 12;
+		width: 120%;
+		height: 300px;
+		background-color: $white;
+		transform: rotate(-3deg);
+		@media all and (max-width: $landscape) {
+			bottom: -275px;
+		}
+	}
+	&:before {
+		content: '';
+		position: absolute;
+		top: -245px;
+		left: -10%;
+		z-index: 11;
+		width: 120%;
+		height: 300px;
+		background-color: $white;
+		transform: rotate(3deg);
+	}
+
+	.articleTitle {
+		margin: 0;
+		text-align: left;
+		color: $white;
+		font-weight: bold;
+		small {
+			font-weight: lighter;
+			font-size: 18px;
+		}
+	}
+
+	.advList {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		@extend %flex;
+		li {
+			display: block;
+			margin: 0 auto;
+			flex: 100 100 30%;
+			padding: 80px 0 0;
+			height: 107px;
+			color: $white;
+			font-weight: lighter;
+			font-size: 16px;
+			line-height: 1.5em;
+			text-align: center;
+			background-repeat: no-repeat;
+			background-position: 50% 0%;
+			opacity: 0;
+			&.animate {
+				opacity: 1;
+			}
+			&.icon-building {
+				background-image: url(../img/pilomaterial/1.png);
+			}
+			&.icon-woodItems {
+				background-image: url(../img/pilomaterial/2.png);
+			}
+			&.icon-production {
+				background-image: url(../img/pilomaterial/3.png);
+			}
+			&.icon-furniture {
+				background-image: url(../img/pilomaterial/4.png);
+			}
+			&.icon-house {
+				background-image: url(../img/pilomaterial/5.png);
+			}
+			&.icon-fence {
+				background-image: url(../img/pilomaterial/6.png);
+			}
+
+			@media all and (max-width: $phone) {
+				flex: 100 100 40%;
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+.whyBrus {
+	@extend .company;
+	padding-top: 210px;
+	@media all and (max-width: $landscape) {
+		padding-top: 100px;
+	}
+	.whyBrus_list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		counter-reset: item;
+		li{ 
+			display: block;
+			position: relative;
+			padding: 12px 0 20px;
+			text-indent: 2.5em;
+			font-size: 16px;
+			line-height: 1.5em;
+			font-weight: lighter;
+			opacity: 0;
+			&:before { 
+				content: counter(item) "."; 
+				counter-increment: item;
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 40px;
+				line-height: 40px;
+				font-size: 30px;
+				text-indent: 0;
+			}
+		}
+		&.animate-lines {
+			li {
+				opacity: 1;
+			}
+		}
+	}
+}

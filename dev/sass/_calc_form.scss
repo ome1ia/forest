@@ -1,0 +1,198 @@
+.calcForm_block {
+	width: 100%;
+	height: 980px;
+	padding-top: 90px;
+	background: #080a02 url(../img/calc_form/fon.png) 50% 50% no-repeat;
+  	-webkit-filter: brightness(0.2); 
+  	filter: brightness(0.2);
+	background-size: cover;
+	color: $white;
+	-webkit-transition: -webkit-filter 0.5s 0.2s;
+	@include transition(filter, 0.2s);
+	&.animate-bg {
+  		-webkit-filter: brightness(1); 
+  		filter: brightness(1);
+	}
+	.articleTitle {
+		max-width: 630px;
+		padding-bottom: 50px;
+		font-size: 42px;
+		@media all and (max-width: $landscape) {
+			font-size: 24px;
+			line-height: 24px;
+			max-width: 250px;
+		}
+		small {
+			display: block;
+			padding-top: 50px;
+			font-size: 24px;
+			line-height: 1.4em;
+			@media all and (max-width: $landscape) {
+				padding-top: 30px;
+				font-size: 18px;
+				font-weight: normal;
+				text-transform: lowercase;
+			}
+		}
+	}
+	.calcForm {
+		@extend .wrapper;
+		max-width: 570px;
+	}
+		.calcForm_row-radio {
+			width: 100%;
+			text-align: center;
+			line-height: 0;
+			padding-bottom: 18px;
+			label {
+				display: inline-block;
+				position: relative;
+				margin: 0 15px;
+				width: 140px;
+				padding: 0 0 25px;
+				border-bottom: 3px solid #f2f2f2;
+				color: #cccccc;
+				text-align: center;
+				text-transform: uppercase;
+				font-size: 16px;
+				line-height: 16px;
+				cursor: pointer;
+				@include transition(all);
+				@media all and (max-width: $landscape - 1) {
+					& {
+						width: 86px;
+					}
+				}
+			}
+			input {
+				display: none;
+			}
+			input:checked + label {
+				border-bottom: 3px solid $yellow;
+				color: $yellow;
+			}
+		}
+
+		.calcForm_row {
+			@extend %flex;
+			align-items: stretch;
+  			align-content: stretch;
+			padding-bottom: 18px;
+
+			.col-1-3 {
+				margin: 0 15px;
+				flex: 1 1 20%;
+				@media all and (max-width: $landscape) {
+					position: relative;
+					padding-bottom: 39px;
+					input {
+						position: absolute;
+						bottom: 0;
+						left: 0;
+					}
+				}
+			}
+			.col-2-3 {
+				margin: 0 15px;
+				flex: 1 1 40%;
+			}
+			.col-3-3 {
+				margin: 0 15px;
+				flex: 1 1 90%;
+			}
+
+			label {
+				display: block;
+				padding-bottom: 18px;
+				color: $white;
+				text-transform: uppercase;
+				font-size: 13px;
+				@media all and (max-width: $landscape) {
+					font-size: 12px;
+					line-height: 16px;
+				}
+			}
+			input {
+				height: 34px;
+				width: calc(100% - 34px);
+				line-height: 39px;
+				font-size: 14px;
+				padding: 0 20px;
+				border-radius: 4px;
+				border: 3px solid $white;
+				background-color: $white;
+				outline: none;
+				&.forminput-error {
+					border: 3px solid red;
+				}
+			}
+			textarea {
+				@extend input;
+				height: 80px;
+				padding: 20px;
+				line-height: 1.5em;
+			}
+			input:-webkit-autofill,
+			input:-webkit-autofill:hover, 
+			input:-webkit-autofill:focus
+			input:-webkit-autofill, 
+			textarea:-webkit-autofill,
+			textarea:-webkit-autofill:hover
+			textarea:-webkit-autofill:focus,
+			select:-webkit-autofill,
+			select:-webkit-autofill:hover,
+			select:-webkit-autofill:focus {
+				border: 3px solid $white;
+				background-color: $white;
+				box-shadow:inset 0 0 0 1000px $white;
+			}
+
+			.capcha {
+				padding: 0;
+				margin: 0;
+				input {
+					width: 50px;
+					text-align: center;
+				}
+			}
+		}
+
+			.center {
+				text-align: center;
+			}
+				.calcForm_button {
+					width: 188px;
+					height: 36px;
+					line-height: 36px;
+					text-transform: uppercase;
+					cursor: pointer;
+					background: $yellow;
+					border: none;
+					outline: none;
+					border-radius: 18px;
+					font-size: 12px;
+					color: $text;
+					-webkit-box-shadow:inset 0 5px 0 0 rgba(0,0,0,0.3);
+					box-shadow:inset 0 5px 0 0 rgba(0,0,0,0.3);
+					@include transition(box-shadow);
+					&:hover {
+						-webkit-box-shadow:inset 0 -5px 0 0 rgba(0,0,0,0.3);
+						box-shadow:inset 0 -5px 0 0 rgba(0,0,0,0.3);
+					}
+				}
+
+		.error-result {
+			margin: 0 15px;
+			padding: 0 0 18px;
+			display: none;
+		}
+
+		.calcForm_submit {
+			display: none;
+		}
+}
+
+.error_capcha {
+	display: inline-block;
+	margin-top: 18px;
+}

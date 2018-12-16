@@ -1,0 +1,51 @@
+.store {
+	@extend .company;
+	padding: 200px 15px 180px;
+	max-width: $maxwidth+30;
+    min-width: $minwidth+30;
+	@media all and (max-width: $landscape) {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+	text-align: center;
+	p {
+		padding-bottom: 54px;
+		opacity: 0;
+		&.animate {
+			opacity: 1;
+		}
+		@media all and (max-width: $landscape) {
+			padding-left: 15px;
+        	padding-right: 15px;
+        	text-align: left;
+		}
+	}
+}
+	.store_gallery {
+		@extend %flex;
+		@media all and (max-width: $landscape) {
+			padding: 0 14px;
+		}
+		.lightbox {
+			margin: 0 15px;
+			flex: 1 1 20%;
+			opacity: 0;
+			&.animate {
+				opacity: 0.8;
+			}
+			@include transition(opacity);
+			&:hover {
+				opacity: 1;
+			}
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+			@media all and (max-width: $landscape) {
+				margin: 1px;
+			}
+		}
+	}

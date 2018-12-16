@@ -1,0 +1,85 @@
+.portfolio {
+	@extend .store;
+		.portfolio_gallery {
+			  @extend %flex;
+			  align-content: stretch;
+			  @media all and (max-width: $landscape) {
+			  	padding-left: 14px;
+			  	padding-right: 14px;
+			  }
+			  .lightbox {
+			  	opacity: 0;
+				&.animate {
+					opacity: 1;
+				}
+			  }
+		}
+			.portfolio_gallery_row-mobile {
+				@extend %flex;
+				align-content: stretch;
+				display: none;
+				@media all and (max-width: $landscape) {
+					width: 100%;
+					display: flex;
+					display: -webkit-flex;
+					
+					.lightbox {
+						display: block;
+						margin: 1px;
+						&.item-big {
+							flex: 0.5 1 46%;
+						}
+						&.item-small {
+							flex: 0.5 1 30%;
+						}
+					}
+				}
+			}
+			.portfolio_gallery_col-small {
+				margin: 0 15px;
+				flex: 0.5 1 30%;
+				@media all and (max-width: $landscape) {
+					margin: 1px;
+				}
+			}
+			.portfolio_gallery_col-big {
+				margin: 0 15px;
+				flex: 0.6 1 45%;
+				@extend %flex;
+				align-content: stretch;
+				@media all and (max-width: $landscape) {
+					margin: 1px;
+					flex: 0.6 1 64%;
+				}
+
+				.lightbox {
+					flex: 0.5 1 35%;
+					&.item-big {
+						flex: 1 1 100%;
+					}
+					&.item-middle {
+						margin-right: 30px;
+						flex: 0.5 1 50%;
+						@media all and (max-width: $landscape) {
+							display: none;
+						}
+					}
+					&.item-small {
+						@media all and (max-width: $landscape) {
+							display: none;
+						}
+					}
+				}
+			}
+				img {
+					width: 100%;
+					height: auto;
+					margin: 0 0 30px;
+					@media all and (max-width: $landscape) {
+						display: block;
+						margin: 0 0 2px;	
+					}
+				}
+
+				
+}

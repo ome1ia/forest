@@ -1,0 +1,41 @@
+#houses {
+	padding-top: 50px;
+}
+.brus {
+	background-color: $black_fon;
+	padding: 90px 0;
+	.wrapper {
+		position: relative;
+	}
+		.articleTitle {
+			padding-right: 500px;
+			text-align: left;
+			color: $yellow;
+			@media all and (max-width: $landscape) {
+				padding-right: 0px;
+			}
+		}
+		p {
+			margin: 0;
+			padding: 0 500px 0 0;
+			color: $white;
+			font-size: 18px;
+			line-height: 1.5em;
+			font-weight: lighter;
+			opacity: 0;
+			&.animate {
+				opacity: 1;
+			}
+			@media all and (max-width: $landscape) {
+				padding-right: 0px;
+			}
+		}
+		.brus_image {
+			position: absolute;
+			bottom: -140px;
+			right: 0;
+			@media all and (max-width: $landscape) {
+				display: none;
+			}
+		}
+}

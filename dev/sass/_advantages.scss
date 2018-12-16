@@ -1,0 +1,75 @@
+#advantages {
+	@media all and (max-width: $landscape) {
+		margin-bottom: -50px; //for menu scroll
+	}
+}
+.advantages {
+	@extend .company;
+	padding-top: 150px;
+	padding-bottom: 210px;
+	@media all and (max-width: $landscape) {
+		padding-bottom: 100px;
+		padding-top: 150px;
+	}
+	.advantages_image {
+		float: left;
+	}
+	.advantages_text {
+		margin-left: 505px;
+	}
+		.advantages_title {
+			margin: 0;
+			padding: 0 0 50px;
+			font-size: 36px;
+			font-weight: bold;
+			line-height: 1.5em;
+			@media all and (max-width: $landscape) {
+				padding: 0 0 24px;
+				font-size: 24px;
+		        text-transform: uppercase;
+		        text-align: center;
+			}
+		}
+		.advantages_list {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			li {
+				margin: 0;
+				padding: 10px 0;
+				font-size: 16px;
+				opacity: 0;
+				&:before {
+					content: '*';
+					display: inline;
+				}
+			}
+			&.animate-lines {
+				li {
+					opacity: 1;
+				}
+			}
+		}
+	@media all and (max-width: $desctop) {
+		.advantages_image {
+			float: none;
+			padding-bottom: 25px;
+			text-align: center;
+			img {
+				width: auto;
+				max-width: 30%;
+				height: auto;
+			}
+		}
+		.advantages_text {
+			margin-left: 0px;
+		}
+	}
+	@media all and (max-width: $phone) {
+		.advantages_image {
+			img {
+				max-width: 50%;
+			}
+		}
+	}
+}

@@ -1,0 +1,252 @@
+.price-1 {
+	padding: 180px 0 150px;
+	@media all and (max-width: $phone) {
+		padding: 100px 0 50px;
+		.priceTable {
+			td {
+				padding: 0;
+				font-size: 12px;
+				vertical-align: top;
+			}
+			.tr-bottom,
+			.tr-bottom--noborder {
+				td {
+					padding-bottom: 5px;
+				}
+			}
+			.tr-top {
+				td {
+					padding-top: 5px;
+				}
+			}
+		}
+	}
+	.articleTitle {
+		float: right;
+		text-align: left;
+		padding-bottom: 45px;
+		small {
+			font-weight: lighter;
+			font-size: 18px;
+			@media all and (max-width: $landscape) {
+				font-size: 18px;
+			}
+		}
+	}
+	@media all and (min-width: $maxwidth) {
+		.priceTable {
+			max-width: 100%;
+			table-layout: fixed;
+			.td-left, td-right {
+				width: auto;
+			}
+			.tb1-col-1 {
+				width: 70px;
+			}
+			.tb1-col-2 {
+				width: 455px;
+			}
+			.tb1-col-3 {
+				width: 190px;
+			}
+			.tb1-col-4 {
+				width: 255px;
+			}
+			.tb1-col-5 {
+				width: 200px;
+			}
+		}
+	}
+		tr {
+			display: none;
+			&.tr-open {
+				display: table-row;
+			}
+			&.th {
+				display: table-row;
+				cursor: pointer;
+				&:hover {
+					th {
+						background: lighten(#f0f0f0, 1%);
+					}
+					.td-transparent {
+						background: $white;
+						@media all and (max-width: $phone) {
+							background-color: lighten(#f0f0f0, 1%);
+						}
+					}
+				}
+				&.th-1, &.th-3 {
+					th {
+						background-color: #ebebeb;
+					}
+					.td-transparent {
+						background: $white;
+						@media all and (max-width: $phone) {
+							background-color: #ebebeb;
+						}
+					}
+					&:hover {
+						th {
+							background: lighten(#ebebeb, 1%);
+						}
+						.td-transparent {
+							background: $white;
+							@media all and (max-width: $phone) {
+								background: lighten(#f0f0f0, 1%);
+							}
+						}
+					}
+				}
+				&.th-4 {
+					th {
+						background-color: #e7e7e7;
+					}
+					.td-transparent {
+						background: $white;
+						@media all and (max-width: $phone) {
+							background-color: #e7e7e7;
+						}
+					}
+					&:hover {
+						th {
+							background: lighten(#e7e7e7, 1%);
+						}
+						.td-transparent {
+							background: $white;
+							@media all and (max-width: $phone) {
+								background: lighten(#f0f0f0, 1%);
+							}
+						}
+					}
+				}				
+						.showPrice {
+							display: block;
+							margin: 0 auto;
+							width: 32px;
+							height: 32px;
+							outline: none;
+							border: none;
+							background: url(../img/bottom-black.png) 50% 50% no-repeat;
+							background-size: 32px 32px;
+							@media all and (max-width: $phone) {
+								background-size: 16px 16px;
+								width: 16px;
+								height: 16px;
+							}
+							overflow: hidden;
+							text-indent: 50px;
+							line-height: 0;
+							cursor: pointer;
+							&.showPrice-open {
+								background-image: url(../img/top-black.png);
+							}
+						}
+			}
+		}
+		tfoot {
+			tr {
+				display: table-row;
+			}
+		}
+			.indent-6em {
+				text-indent: 3.5em;
+				@media all and (max-width: $landscape) {
+					text-indent: 0;
+				}
+			}
+			.indent-15em {
+				text-indent: 8.5em;
+				@media all and (max-width: $landscape) {
+					text-indent: 0;
+				}
+			}
+}
+
+	.priceTable {
+		width: 100%;
+		max-width: $maxwidth;
+		margin: 0 auto;
+		clear: both;
+		border-collapse: collapse;
+    	border-spacing: 0;
+    	opacity: 0;
+		&.animate {
+			opacity: 1;
+		}
+    		.td-left, td-right {
+				width: 0px;
+			}
+		thead {
+			th {
+				background: $yellow;
+				text-align: center;
+				text-transform: none;
+			}
+		}
+		tfoot {
+			td, th {
+				text-align: left;
+				padding-top: 55px;
+				p {
+					padding: 0;
+					margin: 0;
+				}
+			}
+		}
+		.tr-bottom {
+			td {
+				border-bottom: 1px solid $yellow;
+			}
+			.td-transparent {
+				border-bottom: 1px solid $white;
+			}
+		}
+			.td-transparent {
+				background: $white;
+			}
+			th {
+				background: #f0f0f0;
+				padding: 15px;
+				font-size: 18px;
+				line-height: 1.5em;
+				font-weight: normal;
+				text-align: left;
+				vertical-align: middle;
+				text-transform: uppercase;
+				@media all and (max-width: $phone) {
+					padding: 12px 0;
+					font-size: 11px;				
+				}
+			}
+
+			td {
+				padding: 15px;
+				font-size: 16px;
+				line-height: 1.5em;
+				text-align: center;
+			}
+			.td-left {
+				text-align: left;
+			}
+	}
+@media all and (max-width: $phone) {
+	.priceTable {
+		.td-left, .td-right {
+			width: 15px;
+		}
+			thead {
+				th.td-transparent {
+					background: $yellow;
+				}
+			}
+			th.td-transparent {
+				background: #f0f0f0;
+			}
+		.tr-bottom {
+			.td-transparent {
+				border-bottom: 1px solid $yellow;
+			}
+		}	
+	}
+}

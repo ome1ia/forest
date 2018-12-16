@@ -1,0 +1,49 @@
+.cooperation {
+	@extend .company;
+	padding-top: 200px;
+	padding-bottom: 200px;
+	.animation-block {
+		opacity: 0;
+		&.animate {
+			opacity: 1;
+		}
+	}
+	p {
+	 	opacity: 1;
+	 	max-width: 970px;
+	 	margin-left: auto;
+	 	margin-right: auto;
+	 	text-align:center;
+	 	font-size: 16px;
+	}
+	.tel-link {
+		color: $text;
+		text-decoration: none;
+		cursor: default;
+		@media handheld {
+			text-decoration: underline;
+			cursor: pointer;
+		}
+	}
+}
+
+@media all and (max-width: $landscape) {
+	.cooperation {
+		padding-top: 150px;
+		padding-bottom: 100px;
+		margin-bottom: -100px; //for menu scroll
+		background-color: #080a02;
+		color: $white;
+		.articleTitle {
+			padding-bottom: 24px;
+			font-weight: bold;
+			color: $white;
+		}
+		p {
+			color: $white;
+		}
+		.tel-link {
+			color: $white;
+		}
+	}
+}

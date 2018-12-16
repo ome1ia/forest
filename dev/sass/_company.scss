@@ -1,0 +1,18 @@
+.company {
+	@extend .wrapper;
+	padding-top: 190px;
+	margin: 0 auto;
+	@media all and (max-width: $landscape) {
+		padding-top: 100px;
+	}
+	p {
+		margin: 0;
+		padding: 0;
+		font-size: 18px;
+		line-height: 1.5em;
+		opacity: 0;
+		&.animate {
+			opacity: 1;
+		}
+	}
+}

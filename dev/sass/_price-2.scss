@@ -1,0 +1,124 @@
+.price-2 {
+	@extend .price-1;
+	padding-bottom: 75px;
+	.articleTitle {
+		float: none;
+	}
+	td {
+		background-color: #f7f7f7;
+	}
+	.likeTD {
+		padding: 15px 0;
+	}
+	tr {
+		display: table-row;
+	}
+	@media all and (min-width: $maxwidth) {
+		.priceTable {
+			max-width: 100%;
+			table-layout: fixed;
+				.td-left, td-right {
+					width: auto;
+				}
+			.tb2-col-1 {
+				width: 110px;
+			}
+			.tb2-col-2 {
+				width: ($maxwidth - 110)/4;
+			}
+			.tb2-col-3 {
+				width: ($maxwidth - 110)/4;
+			}
+			.tb2-col-4 {
+				width: ($maxwidth - 110)/4;
+			}
+			.tb2-col-5 {
+				width: ($maxwidth - 110)/4;
+			}
+		}
+	}
+	@media all and (max-width: $landscape) {
+		margin-bottom: -100px; //for menu scroll
+		.articleTitle {
+			small {
+				display: block;
+				padding-top: 30px;
+				line-height: 1.4em;
+			}
+		}
+			td {
+				padding: 15px 0;
+				&.td-transparent {
+					background-color: #f7f7f7;
+				}
+			}
+			td:nth-child(2) {
+				text-align: left;
+			}
+			thead th {
+				vertical-align: top;
+				text-align: left;
+				line-height: 1.2em;
+				&:nth-child(3) {
+					background: darken($yellow,1%);
+				}
+				&:nth-child(4) {
+					background: darken($yellow,2%);
+				}
+				&:nth-child(5) {
+					background: darken($yellow,3%);
+				}
+				&:nth-child(6),
+				&:nth-child(7) {
+					background: darken($yellow,4%);
+				}
+			}
+				.likeTD {
+					padding: 0;
+				}
+	}
+	@media all and (min-width: $phone + 1) and (max-width: $landscape) {
+		td {
+			font-size: 12px;
+		}
+		th {
+			font-size: 14px;
+		}
+	}
+	@media all and (max-width: $phone) {
+		.priceTable {
+			max-width: none;
+		    	width: auto;
+		    	min-width: 100%;			
+			table-layout: fixed;
+			td:first-child,
+			td:last-child,
+			th:first-child,
+			th:last-child {
+				width: 15px;
+			}
+			td {
+				padding: 5px 0;
+				font-size: 10px;
+				font-weight: lighter;
+				vertical-align: top;
+			}
+		}
+		.tb2-col-1 {
+			width: calc(20% - 6px);
+		}
+		.tb2-col-2 {
+			width: calc(20% - 6px);
+		}
+		.tb2-col-3 {
+			width: calc(20% - 6px);
+		}
+		.tb2-col-4 {
+			width: calc(20% - 6px);
+		}
+		.tb2-col-5 {
+			width: calc(20% - 6px);
+		}
+
+	}
+}

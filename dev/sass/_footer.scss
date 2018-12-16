@@ -1,0 +1,25 @@
+.mainFooter {
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 70px 0;
+	margin: 0;
+	background-color: $black_fon;
+	color: $yellow;
+	@media all and (max-width: $landscape) {
+		padding: 35px 0;
+	}
+	p {
+		margin: 0;
+		padding-top: 0;
+		text-align: center;
+		font-size: 14px;
+		opacity: 0;
+		&.animate {
+			opacity: 1;
+		}
+		@media all and (max-width: $landscape) {
+			font-size: 10px;
+		}
+	}
+}
